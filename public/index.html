@@ -4,20 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chat Simples</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="chat">
-    <div id="login">
-      <input id="username" placeholder="Digite seu nome" />
-      <button id="login-btn">Entrar</button>
-    </div>
-    <ul id="messages"></ul>
-    <form id="form" style="display: none;">
-      <input id="input" autocomplete="off" placeholder="Digite uma mensagem..." />
-      <button type="submit">Enviar</button>
+  <!-- Tela de Login -->
+  <div id="login-screen">
+    <form action="#" class="login-form">
+      <h1 class="login-title">Login</h1>
+
+      <div class="input-box">
+        <i class='bx bxs-user'></i>
+        <input type="text" id="username" placeholder="Username">
+      </div>
+      <div class="input-box">
+        <i class='bx bxs-lock-alt'></i>
+        <input type="password" id="password" placeholder="Password">
+      </div>
+
+      <div class="remember-forgot-box">
+        <label for="remember">
+          <input type="checkbox" id="remember">
+          Lembrar de mim
+        </label>
+        <a href="#">Esqueceu a senha?</a>
+      </div>
+
+      <button type="button" id="login-btn" class="login-btn">Entrar</button>
+
+      <p class="register">
+        Não tem uma conta?
+        <a href="#">Registrar</a>
+      </p>
     </form>
   </div>
+
+  <!-- Tela do Chat (inicialmente oculta) -->
+  <div id="chat-screen" style="display: none;">
+    <div id="chat">
+      <ul id="messages"></ul>
+      <form id="form">
+        <input id="input" autocomplete="off" placeholder="Digite uma mensagem..." />
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+
   <script src="/socket.io/socket.io.js"></script>
   <script src="script.js"></script>
 </body>
